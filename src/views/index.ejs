@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Express Validator</title>
+</head>
+<body>
+    <h1>Express Validator</h1>
+    <form action="/register" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<%if(typeof values != 'undefined'){%><%=values.name%><%}%>">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" value="<%if(typeof values != 'undefined'){%><%=values.email%><%}%>">
+      </div>
+      <div>
+        <label for="age">Age</label>
+        <input type="text" name="age" id="age" value="<% if (typeof values != 'undefined'){%><%=values.age%><%}%>">
+      </div>
+      <button type="submit">Submit</button>
+    </form> 
+    <% if (typeof msgs != 'undefined') { %>
+      <% msgs.forEach((msg) => { %>
+        <p><%= msg.msg %></p>
+      <% }) %>    
+    <% } %>
+  </div>  
+</body>
+</html>
